@@ -1,13 +1,20 @@
 # Welcome to MkDocs
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Easily reuse code chunks across shell scripts.
 
-## Commands
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Release is available here [https://mrjk.github.io/shxt/shxt.sh](shxt.sh).
+```
+eval "$(curl -v https://mrjk.github.io/shxt/shxt.sh); shxt_init"
+```
+
+Or in dev mode
+```
+eval "$(curl -v http://127.0.0.1:8000/shxt/shxt.sh)"
+
+shxt_init
+```
+
 
 ## Project layout
 

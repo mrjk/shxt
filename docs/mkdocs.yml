@@ -1,6 +1,121 @@
-site_name: My Docs
+site_name: SHell eXTender
 site_url: https://mrjk.github.io/shxt/
 theme:
   name: material
 
 
+repo_url: https://github.com/mrjk/shxt
+repo_name: mrjk/shxt
+
+docs_dir: docs/
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - navigation.tabs
+    - content.code.annotate
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: green
+      accent: red
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: green
+      accent: red
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+markdown_extensions:
+  # - literate-nav:
+  #     nav_file: SUMMARY.md
+
+  # - abbr
+  - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      pygments_lang_class: true
+      auto_title: false
+      # linenums: true
+
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      # auto_append: ["../LICENSE"]
+      base_path:
+        - ".."
+        - "../logo"
+        - "content"
+      # auto_append:
+      #   - docs/includes/abbreviations.md
+      check_paths: true
+
+
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - footnotes
+  - attr_list
+  - sane_lists
+  - toc
+
+  # Ensure we have easy list parsing
+  - mdx_truly_sane_lists:
+      nested_indent: 2
+      truly_sane: true
+
+hooks:
+  - hooks.py
+
+plugins:
+  - search
+  - awesome-pages
+  # - mkdocs-simple-hooks:
+  #     enabled: !ENV [ENABLE_MKDOCS_SIMPLE_HOOKS, True]
+  #     hooks:
+  #       # on_post_build: "docs.hooks:copy_get"
+  #       on_pre_build: "docs.hooks:copy_exec"
+        
+  # - mkdocstrings:
+  #     handlers:
+  #       python:
+  #         paths: [..]
+  #         options:
+  #           show_source: true
+  #           show_root_heading: true
+
+nav:
+  - Home:
+    - index.md
+    - install.md
+    - source.md
+  # - ... | quickstart/*
+  # - Home:
+  #     - Index: index.md
+  #     - Install: install.md
+  #     - Quickstart: quickstart.md
+
+  # - Guides:
+  # - ... | guides/*
+
+  # # - Documentation:
+  # - ... | docs/*
