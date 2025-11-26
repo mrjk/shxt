@@ -520,8 +520,6 @@ shxt_init()
     fi
   fi
 
-  set -x
-
   # Reload code
   if [[ "$need_update" == true ]]; then
     log TRACE "Reloading shxt source code"
@@ -538,6 +536,7 @@ shxt_init()
   export SHXT_LIBS=''
   loader_register SHXT_LIBS "$path" shxt.sh || return 0
   export SHXT_VERSION=0.0.1
+  export USER=${USER:-$(id -u)}
   export SHXT_NEEDLE=${SHXT_NEEDLE:-${USER}-$(cksum <<< "$path" | cut -f 1 -d ' ')}
 
   # Find most suitable RW path
@@ -996,3 +995,4 @@ else
   shxt_init "$@"
 
 fi
+

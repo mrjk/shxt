@@ -1,8 +1,7 @@
-<!-- # Source
 
-Source ccode -->
+This is the full code of shxt.sh. You can also fetch it with curl on [https://mrjk.github.io/shxt/shxt.sh](shxt.sh).
 
-
-<!--- pyml disable-next-line first-line-heading -->
-<!--- pyml disable-next-line first-line-h1 -->
+```shell
 --8<-- "shxt.sh"
+```
+
