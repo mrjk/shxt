@@ -1,0 +1,1360 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mrjk.github.io/shxt/source/">
+      
+      
+        <link rel="prev" href="../install/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Source - SHell eXTender</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#binbash" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SHell eXTender" class="md-header__button md-logo" aria-label="SHell eXTender" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SHell eXTender
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Source
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="red"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mrjk/shxt" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mrjk/shxt
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SHell eXTender" class="md-nav__button md-logo" aria-label="SHell eXTender" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SHell eXTender
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mrjk/shxt" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mrjk/shxt
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href=".." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<!-- # Source
+
+Source ccode -->
+
+<!--- pyml disable-next-line first-line-heading -->
+<!--- pyml disable-next-line first-line-h1 -->
+<h1 id="binbash">!/bin/bash</h1>
+<h1 id="_1">=============================================================</h1>
+<h1 id="documentation">Documentation</h1>
+<h1 id="_2">=============================================================</h1>
+<h1 id="usage-api">Usage API:</h1>
+<h1 id="source-importsh-lib">source import.sh ../lib</h1>
+<h1 id="import-httpsrawgithubusercontentcomqzbisshmasterissh">import https://raw.githubusercontent.com/qzb/is.sh/master/is.sh</h1>
+<h1 id="import-myapp_lib1sh">import myapp_lib1.sh</h1>
+<h1 id="import-myapp_lib2sh">import myapp_lib2.sh</h1>
+<h1 id="packagesh-file-isshv112">package.sh file is.sh@v1.1.2</h1>
+<h1 id="see-httpsgithubcomdylanarapspure-bash-bibleblobmasterreadmemdget-the-terminal-size-in-lines-and-columns-from-a-script">See: https://github.com/dylanaraps/pure-bash-bible/blob/master/README.md#get-the-terminal-size-in-lines-and-columns-from-a-script</h1>
+<h1 id="a-vars-from-untouched-shell">a vars from untouched shell:</h1>
+<h1 id="bash-env-i-bash-norc-o-posix-c-set-less">bash: ( env -i bash --norc -o posix -c set ) | less</h1>
+<h1 id="sh-env-i-sh-norc-c-set">sh: ( env -i sh --norc -c -- set )</h1>
+<h1 id="_3">=============================================================</h1>
+<h1 id="libraries">Libraries</h1>
+<h1 id="_4">=============================================================</h1>
+<h1 id="portable-realpath-implementation-in-shell-script">Portable realpath implementation in shell script</h1>
+<h1 id="usage">Usage:</h1>
+<h1 id="realpath">realpath [<PATH>]</h1>
+<h1 id="example">Example:</h1>
+<h1 id="realpath-bash_source0">realpath "${BASH_SOURCE[0]}"</h1>
+<h1 id="realpath-binfile">realpath ../bin/file</h1>
+<h1 id="realpath_1">realpath</h1>
+<h1 id="source-httpsstackoverflowcoma45828988">Source: https://stackoverflow.com/a/45828988</h1>
+<p>realpath()
+( 
+  # TOFIX: Verify this function still work in strict mode
+  # set -o errexit -o nounset
+  declare link="${1:-$PWD}"</p>
+<p># Try with real realpath first
+  if command realpath "$link" 2&gt;/dev/null; then return; fi</p>
+<p># If it's a directory, just skip all this.
+  if cd "$link" 2&gt;/dev/null; then
+    pwd -P "$link"; return 0
+  fi</p>
+<p># Resolve until we are out of links (or recurse too deep).
+  declare n=0 limit=1024
+  while [[ -L $link ]] &amp;&amp; [[ $n -lt $limit ]]; do 
+    n=$((n + 1))
+    cd "$(dirname -- ${link})" \
+      &amp;&amp; link="$(readlink -- "${link##<em>/}")"
+  done; cd "${link%/</em>}"</p>
+<p># Check limit recursion
+  [[ $n -lt $limit ]] || {
+    &gt;&amp;2 printf "ERROR: Recursion limit ($limit) exceeded.\n"
+    return 2; }</p>
+<p>printf '%s/%s\n' "$(pwd -P)" "${link##*/}"
+)</p>
+<h1 id="add-a-to">Add a <PATH> to <PATHS_VAR></h1>
+<h1 id="usage_1">Usage:</h1>
+<h1 id="varpath_prepend">varpath_prepend <PATHS_VAR> <PATH></h1>
+<h1 id="example_1">Example:</h1>
+<h1 id="varpath_prepend-path-pwdappbin">varpath_prepend PATH $PWD/app/bin</h1>
+<p>varpath_append_force() {
+  local var=$1
+  local path=$2</p>
+<p>log TRACE "Prepend to $var: $path"
+  if [[ ":${!var}:" != <em>":$path:"</em> ]]; then
+  # if [ -d "$path" ] &amp;&amp; [[ ":${!var}:" != <em>":$path:"</em> ]]; then
+  #   log TRACE "Add prepend to '$var': $path"
+    export "${var}=${!var:+"${!var}:"}$path"</p>
+<p>fi
+}
+varpath_append() {
+  local var=$1
+  local path=$2</p>
+<p>if [ -d "$path" ]; then
+    varpath_append_force "$var" "$path"
+  else
+    log TRACE "Skip directory for $var: $path"
+  fi</p>
+<p>}</p>
+<h1 id="add-a-to_1">Add a <PATH> to <PATHS_VAR></h1>
+<h1 id="usage_2">Usage:</h1>
+<h1 id="varpath_append">varpath_append <PATHS_VAR> <PATH></h1>
+<h1 id="example_2">Example:</h1>
+<h1 id="varpath_append-path-pwdappbin">varpath_append PATH $PWD/app/bin</h1>
+<p>varpath_prepend_force() {
+  local var=$1
+  local path=$2</p>
+<p>if [[ ":${!var}:" != <em>":$path:"</em> ]]; then
+    log TRACE "Append to $var: $path"
+    export "${var}=$path${!var:+":${!var}"}"
+  else
+    log TRACE "Already in path $var: $path"
+    return 1
+  fi
+}
+varpath_prepend() {
+  local var=$1
+  local path=$2</p>
+<p>if [ -d "$path" ]; then
+    varpath_prepend_force "$var" "$path"
+  else
+    log TRACE "Skip directory for $var: $path"
+  fi</p>
+<p>}</p>
+<h1 id="find-first-matching-file-called-in-list-of">Find first matching file called <NAME> in list of <PATHS_VAR></h1>
+<h1 id="usage_3">Usage:</h1>
+<h1 id="varpath_find">varpath_find <PATHS_VAR> <NAME></h1>
+<p>varpath_find ()
+{
+  local var_name=$1
+  local target=$2
+  local path=
+  log TRACE "File lookup: '$target' from \$${var_name}"</p>
+<p>local paths=$(/usr/bin/tr ':' '\n' &lt;&lt;&lt; "${!var_name}")
+  while read path ; do
+    file="$path/$target"
+    if [[ -f "$file" ]]; then
+      log TRACE "File lookup successed: $file"
+      printf "%s\n" "$file"
+      return 0
+    else
+      log TRACE "File lookup failed: $file"
+    fi
+  done &lt;&lt;&lt;"$paths"
+  log TRACE "Could not find file '$target' in '\$${var_name}'"
+  # &gt;&amp;2 printf "%s\n" "WARN: Could not find file '$target' in "${var_name}""
+  return 1
+}</p>
+<p>varpath_find2 ()
+{
+  local var_name=$1
+  local target=$2
+  local path=
+  log TRACE "File lookup: '$target' from \$${var_name}"</p>
+<p>local paths=$(/usr/bin/tr ':' '\n' &lt;&lt;&lt; "${!var_name}")
+  while read path ; do
+    file="$path/$target"
+    if [[ -f "$file" ]]; then
+      log TRACE "File lookup successed: $file"
+      printf "%s\n" "$file"
+      return 0
+    else
+      log TRACE "File lookup failed: $file"
+    fi
+  done &lt;&lt;&lt;"$paths"
+  log TRACE "Could not find file '$target' in '\$${var_name}'"
+  # &gt;&amp;2 printf "%s\n" "WARN: Could not find file '$target' in "${var_name}""
+  return 1
+}</p>
+<h1 id="find-all-writable-or-parents-dirs-and-return-a-colon-separated-string-result">Find all writable or parents dirs and return a colon separated string result</h1>
+<h1 id="usage_4">Usage:</h1>
+<h1 id="varpath_find_rw_dir">varpath_find_rw_dir [<PATHS>...]</h1>
+<p>varpath_find_rw_dir ()
+{
+  local target=($@)
+  if [[ "$@" == '-' ]] ; then
+    # Read from stdin
+    local target=() line=
+    # exec &lt; &lt;(printf '%s\n' "$@")
+    while IFS= read -r line; do
+      [ -z "$line" ] || target+=($line)
+    done &lt;&lt;&lt;"$(cat /dev/stdin)"
+  fi
+  local i=0
+  local result=''
+  while (( i &lt; ${#target[@]} )); do
+      local path="${target[i]}"
+      local parent=${path%/*}
+      if [ -d "$path" ]; then
+        if [ -w "$path" ]; then
+          result="${result:+$result:}$path"
+        fi
+      elif [ -d "$parent" ]; then
+        if [ -w "$parent" ]; then
+          result="${result:+$result:}$path"
+        fi
+      fi
+      ((i++))
+  done
+  printf "%s" "$result"
+}</p>
+<h1 id="test-if-shell-is-executed-or-sourced">Test if shell is executed or sourced</h1>
+<h1 id="if-bash_source0-0-then"># if [[ "${BASH_SOURCE[0]}" =~ .*"$0"$ ]]; then</h1>
+<h1 id="if-bash_source0-0-then_1">if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then</h1>
+<h1 id="echo-executed">echo EXECUTED</h1>
+<h1 id="else">else</h1>
+<h1 id="echo-sourced">echo SOURCED</h1>
+<h1 id="fi">fi</h1>
+<h1 id="return-true-if-context-is-executed">Return true if context is executed</h1>
+<p>shell_is_executed () {
+  [[ "${BASH_SOURCE[0]}" == "$0" ]]
+}</p>
+<h1 id="return-false-if-context-is-sourced">Return false if context is sourced</h1>
+<p>shell_is_sourced () {
+  ! shell_is_executed
+}</p>
+<h1 id="return-false-if-context-is-sourced_1">Return false if context is sourced</h1>
+<p>shell_is_known () {
+  local name=$1
+  case "$name" in
+    <em>/sh) echo "$name" ;; 
+    </em>/ash) echo "$name" ;; 
+    <em>/bash) echo "$name" ;; 
+    </em>/zsh) echo "$name" ;; 
+    *) return 1;; 
+  esac
+}</p>
+<h1 id="sources">Sources:</h1>
+<h1 id="httpsserverfaultcomquestions146745how-can-i-check-in-bash-if-a-shell-is-running-in-interactive-mode">https://serverfault.com/questions/146745/how-can-i-check-in-bash-if-a-shell-is-running-in-interactive-mode</h1>
+<h1 id="return-true-if-terminal-stdin-is-interactive-terminal">Return true if terminal stdin is interactive terminal</h1>
+<p>shell_is_interactive () {
+  [ -t 0 ]
+}</p>
+<h1 id="return-true-if-terminal-stdin-is-not-interactive">Return true if terminal stdin is not interactive</h1>
+<p>shell_is_not_interactive () {
+  ! [ -t 0 ]
+}</p>
+<h1 id="source-a-shell-file">Source a shell file</h1>
+<p>shell_source ()
+{
+  local path=$1
+  shift 1 || true
+  local rc=0</p>
+<p>PWD="${path%/*}" . "$path" $@ || \
+    {
+      rc=$?
+      &gt;&amp;2 printf "Failed to load lib returned $rc: %s\n" "$p"
+    }
+  return $rc
+}</p>
+<h1 id="download-an-into-or-stdout">Download an <URL> into <PATH> or stdout</h1>
+<h1 id="usage_5">Usage:</h1>
+<h1 id="download_file">download_file <URL></h1>
+<h1 id="download_file_1">download_file <URL> <PATH></h1>
+<p>download_file() {
+  local url=$1
+  local filename=${2:--}</p>
+<p>if [ -z "$url" ]; then
+      echo "Usage: download_file <URL> [<FILENAME>]"
+      return 1
+  fi</p>
+<p># Create destination dir
+  if [ "$filename" != '-' ]; then
+    local parent="${filename%/*}"
+    [[ -d "${parent}" ]] || mkdir -p "${parent}"
+  fi</p>
+<p># Find download tool
+  local rc=0
+  if command -v curl &gt; /dev/null; then
+      curl -L -s -o "$filename" "$url" || rc=$?
+      if [[ $rc -ne 0 ]]; then
+        log WARN "Failure after curl: $rc"
+        return 1
+      fi
+  elif command -v wget &gt; /dev/null; then
+      wget -O "$filename" "$url"
+  else
+      printf "%s\n" "Neither curl nor wget is installed. Please install one of them to use this function."
+      return 1
+  fi</p>
+<p># Report
+  if [ $? -ne 0 ]; then
+    &gt;&amp;2 printf "ERROR: Failed to download the file: %s\n" "$url"
+    return 1
+  else
+    log TRACE "File downloaded successfully as: $filename"
+  fi
+}</p>
+<h1 id="shxt_log_levelshxt_log_level-info-dry-debug-trace">SHXT_LOG_LEVEL=${SHXT_LOG_LEVEL:-INFO}  # DRY, DEBUG, TRACE</h1>
+<h1 id="shxt_log_scaletracedebugruninfodryhintnoticecmduserwarnerrerrorcrittododiequitprompt">SHXT_LOG_SCALE="TRACE:DEBUG:RUN:INFO:DRY:HINT:NOTICE:CMD:USER:WARN:ERR:ERROR:CRIT:TODO:DIE:QUIT:PROMPT"</h1>
+<h1 id="cli-libraries">CLI libraries</h1>
+<h1 id="_5">=================</h1>
+<h1 id="validate-log-level-pass-aginst-limit">Validate log level pass aginst limit</h1>
+<p>_log_validate_level ()
+{
+  local SHXT_LOG_SCALE="${SHXT_LOG_SCALE:-TRACE:DEBUG:INFO:NOTICE:WARN:ERR:ERROR:CRIT:TODO:DIE:QUIT:PROMPT}"</p>
+<p>local level=$1
+  local limit_level=${2:-${SHXT_LOG_SCALE%%:*}}</p>
+<p>if [[ ! ":${SHXT_LOG_SCALE#*$limit_level:}:$limit_level:" =~ :"$level": ]]; then
+    if [[ ! ":${SHXT_LOG_SCALE}" =~ :"$level": ]]; then
+      &gt;&amp;2 printf "%s\n" "  BUG: Unknown log level: $level"
+    fi
+    return 1
+  fi
+}</p>
+<h1 id="logging-support-with-levels">Logging support, with levels</h1>
+<p>log () 
+{
+  local SHXT_LOG_LEVEL=${SHXT_LOG_LEVEL:-INFO}</p>
+<p>local old_setting=${-//[^x]/}; set +x
+  local level="${1:-DEBUG}"
+  shift 1 || true</p>
+<p># Check log level filter
+  if _log_validate_level "$level" "$SHXT_LOG_LEVEL"; then</p>
+<div class="language-text highlight"><pre><span></span><code>local msg=${*}
+if [[ &quot;$msg&quot; == &#39;-&#39; ]]; then
+  msg=&quot;$(cat -)&quot;
+fi
+while read -r -u 3 line; do
+  &gt;&amp;2 printf &quot;%6s: %s\\n&quot; &quot;$level&quot; &quot;${line:- }&quot;
+done 3&lt;&lt;&lt;&quot;$msg&quot;
+</code></pre></div>
+<p>fi</p>
+<p># Restore trace mode if was enabled
+  if [[ -n "${old_setting-}" ]]; then set -x; else set +x; fi
+}</p>
+<h1 id="terminate-all-with-error-message-and-rc-code">Terminate all with error message and rc code</h1>
+<p>log_die ()
+{
+    local rc=${1:-1}
+    shift 1 || true
+    local msg="${*:-}"
+    local prefix=DIE
+    [[ "$rc" -eq 0 ]] || prefix=DIE
+    if [[ -z "$msg" ]]; then
+      [ "$rc" -ne 0 ] || exit 0
+      log "$prefix" "Program terminated with error: $rc"
+    else
+      log "$prefix" "$msg"
+    fi</p>
+<div class="language-text highlight"><pre><span></span><code># Remove EXIT trap and exit nicely
+trap &#39;&#39; EXIT
+exit &quot;$rc&quot;
+</code></pre></div>
+<p>}</p>
+<h1 id="_6">=============================================================</h1>
+<h1 id="internal-libraries-registries">Internal libraries: Registries</h1>
+<h1 id="_7">=============================================================</h1>
+<h1 id="register-library">Register library</h1>
+<h1 id="usage-loader_register-store-path-name">Usage: loader_register STORE PATH [NAME]</h1>
+<p>loader_register()
+{
+  local store_name=$1
+  local store=${!store_name}
+  local path=$2
+  local file=${3:-${path##<em>/}}
+  local dir=${path%/</em>}</p>
+<p># # Do initial load
+  # if [[ -z "${SHLIB-}" ]]; then
+  #   SHSRC=$path
+  #   SHSRC_FILE=$file
+  #   SHSRC_DIR=$dir
+  # fi</p>
+<p># Check if lib is not already registered
+  # [[ ":${store-}:" != <em>:$file:</em> ]] || {
+  [[ ":${store-}:" != <em>:$file=</em>:* ]] || {
+    &gt;&amp;2 printf "Item already registered: %s\n" "$file"
+    return 1
+  }</p>
+<p># Add module into SHLIB
+  declare -g "$store_name"="${store:+$store:}$file=$path"</p>
+<p># Importing vars
+  _IMPORT_PATH=$path
+  _IMPORT_FILE=$file
+  _IMPORT_DIR=$dir
+}</p>
+<h1 id="_8">=============================================================</h1>
+<h1 id="init-loader">Init Loader</h1>
+<h1 id="_9">=============================================================</h1>
+<h1 id="prepare-importsh-environment">Prepare import.sh environment</h1>
+<p>shxt_init()
+{</p>
+<p>local auto_install=true
+  local auto_update=true
+  local debug=false
+  local trace=false
+  local OPTIND=0
+  while getopts 'dxuUlL' opt; do
+    case ${opt} in
+      d)
+        debug=true
+        ;;
+      x)
+        trace=true
+        ;;
+      u)
+        auto_update=true
+        ;;
+      U)
+        auto_update=false
+        ;;
+      l)
+        auto_install=true
+        ;;
+      L)
+        auto_install=false
+        ;;
+      ?)
+        log ERROR "Invalid option: -${OPTARG}."
+        return 1
+        ;;
+    esac
+    OPTIND=$((OPTIND + 1))
+  done
+  OPTIND=$((OPTIND - 1))
+  shift "$OPTIND"</p>
+<p># Enable flags
+  if [[ "$debug" == true ]]; then
+    SHXT_LOG_LEVEL=TRACE
+    log INFO "shxt.sh debug mode enabled"
+  fi
+  if [[ "$trace" == true ]]; then
+    set -x
+  fi</p>
+<p># Init core
+  local d=${1-} # ${1:-$(ps -o args= $$)}</p>
+<p>local path=$(realpath "$0")
+  local root="${path%/*}${d:+/$d}"</p>
+<p># Autodetect current installation</p>
+<p>local install_path=$(command -v "shxt.sh" 2&gt;/dev/null)
+  local need_update=false
+  if [[ "$auto_install" == true ]] &amp;&amp; [[ ! -x "$install_path" ]] ; then
+    # Auto install in PATH if not installed
+    log INFO "Auto-installing shxt.sh"
+    if _loader2__install; then
+      need_update=true
+    fi</p>
+<p>elif [[ "$auto_update" == true ]] &amp;&amp; [[ -x "$install_path" ]] ; then
+    # Run auto update ...
+    local max_days=7
+    local max_age_ts=$(date -d "now - $max_days days" +%s)
+    local last_update_ts=$(date -r "$install_path" +%s)
+    if (( last_update_ts &lt;= max_age_ts )); then
+      # echo "$filename is older than 100 days"
+      log INFO "Auto-updating shxt.sh because older than $max_days days"
+      if _loader2__install; then
+        need_update=true
+      fi
+    else
+      log TRACE "No need to update, newer than $max_days days"
+    fi
+  fi</p>
+<p>set -x</p>
+<p># Reload code
+  if [[ "$need_update" == true ]]; then
+    log TRACE "Reloading shxt source code"
+    install_path=$(command -v "shxt.sh" 2&gt;/dev/null)
+    . "$install_path"
+  fi
+  export SHXT_INSTALL_PATH=$install_path</p>
+<p># set +x</p>
+<p># Auto-register into SHLIB or quit
+  export SHXT_LIBS=''
+  loader_register SHXT_LIBS "$path" shxt.sh || return 0
+  export SHXT_VERSION=0.0.1
+  export SHXT_NEEDLE=${SHXT_NEEDLE:-${USER}-$(cksum &lt;&lt;&lt; "$path" | cut -f 1 -d ' ')}</p>
+<p># Find most suitable RW path
+  export SHXT_DATA_DIRS=$(varpath_find_rw_dir \
+    "$HOME/.local/share/shxt" \
+    "$HOME/.tmp/shxt" \
+    "/tmp/" \
+    "/dev/shm/" \
+    "$root/cache/" \
+    "$root/tmp/"
+    )</p>
+<p># Keep only first writable dir and append program needle
+  export SHXT_RW_PATH="${SHXT_DATA_DIRS%%:*}${SHXT_DATA_DIRS:+/$SHXT_NEEDLE}"</p>
+<p># Etra dirs
+  export SHXT_DIR_BIN=${SHXT_RW_PATH:+$SHXT_RW_PATH/bin}
+  export SHXT_DIR_LIB=${SHXT_RW_PATH:+$SHXT_RW_PATH/lib}
+  export SHXT_DIR_FILES=${SHXT_RW_PATH:+$SHXT_RW_PATH/files}</p>
+<p>[ -d "${SHXT_DIR_BIN:-}" ] || mkdir -p "${SHXT_DIR_BIN}"
+  [ -d "${SHXT_DIR_LIB:-}" ] || mkdir -p "${SHXT_DIR_LIB}"
+  [ -d "${SHXT_DIR_FILES:-}" ] || mkdir -p "${SHXT_DIR_FILES}"</p>
+<p># return 1</p>
+<p># # Prepare lookup paths</p>
+<p>export SHXT_LIB_PATHS=
+  # varpath_append SHXT_LIB_PATHS "$root/lib"
+  # varpath_append SHXT_LIB_PATHS "$root/libexec"
+  # varpath_append SHXT_LIB_PATHS "$root"
+  # varpath_append SHXT_LIB_PATHS "$SHXT_DIR_SHARED/lib"
+  # varpath_append SHXT_LIB_PATHS "$SHXT_DIR_DOWNLOADS/$SHXT_NEEDLE/lib"</p>
+<p># export SHXT_FILE_PATHS=
+  # varpath_append SHXT_FILE_PATHS "$root/share"
+  # varpath_append SHXT_FILE_PATHS "$root"
+  # varpath_append SHXT_FILE_PATHS "$SHXT_DIR_SHARED/share"
+  # varpath_append SHXT_FILE_PATHS "$SHXT_DIR_DOWNLOADS/$SHXT_NEEDLE/files"</p>
+<p>export SHXT_BIN_PATHS=$PATH
+  # varpath_prepend SHXT_BIN_PATHS "/usr/local/sbin/"
+  # varpath_prepend SHXT_BIN_PATHS "/usr/local/bin/"
+  # varpath_prepend SHXT_BIN_PATHS "$HOME/bin"
+  # varpath_prepend_force SHXT_BIN_PATHS "$HOME/.local/bin"
+  # varpath_prepend_force SHXT_BIN_PATHS "$HOME/.local/scripts"</p>
+<p>varpath_prepend SHXT_BIN_PATHS "$root/bin"
+  varpath_prepend SHXT_BIN_PATHS "$root"
+  varpath_prepend SHXT_BIN_PATHS "$SHXT_DIR_BIN"
+  varpath_prepend SHXT_BIN_PATHS "$SHXT_DIR_SHARED/bin"
+  # varpath_prepend SHXT_BIN_PATHS "$SHXT_DIR_DOWNLOADS/$SHXT_NEEDLE/bin"</p>
+<p>varpath_prepend SHXT_BIN_PATHS "$SHXT_RW_PATH"</p>
+<p># log WARN "PATH DIRS: $SHXT_BIN_PATHS"</p>
+<p># Self register and init
+  # export SHXT_BIN_PATHS_OLD=${SHXT_BIN_PATHS_OLD:-$PATH}
+  # export SHXT_FILE_MAP=
+  # export SHLIB=
+  # export SHXT_LIBS='toto:titi'</p>
+<p># echo "RET=$(shell_is_known $path)"
+  # return 1
+  # loader_register SHXT_LIBS "$path" </p>
+<p># export PATH=$SHXT_BIN_PATHS</p>
+<p>log TRACE "shxt.sh inited: $SHXT_RW_PATH"</p>
+<p>}</p>
+<h1 id="ensure-shxtsh-is-installed-gloabally">Ensure shxt.sh is installed gloabally</h1>
+<p>_loader2__install ()
+{</p>
+<p>local dest=${1:-}
+  # local url="https://mrjk.github.io/shxt/shxt.sh"
+  # local url="https://mrjk.github.io/shxt/v.1/shxt.sh"
+  local url="https://raw.githubusercontent.com/mrjk/shxt/refs/heads/main/shxt.sh"</p>
+<p>local force=false
+  while getopts ':f' opt; do
+    case ${opt} in
+      f)
+        force=true
+        ;;
+      ?)
+        log ERROR "Invalid option: -${OPTARG}."
+        return 1
+        ;;
+    esac
+  done</p>
+<p># Quit if already installed
+  local existing=$(command -v "shxt.sh" 2&gt;/dev/null)
+  if [[ -x "$existing" ]] ; then
+    if [[ "$force" != true ]]; then
+      log TRACE "shxt.sh already installed in $existing"
+      return 0
+    fi
+  fi</p>
+<p># Detect install path
+  local result=
+  if [ -n "$dest" ]; then
+    dest=$(varpath_find_rw_dir "$dest")
+  else</p>
+<div class="language-text highlight"><pre><span></span><code>dest=$(tr &#39;:&#39; &#39;\n&#39; &lt;&lt;&lt; &quot;$PATH&quot; | tac | varpath_find_rw_dir -)
+dest=${dest%%:*}
+</code></pre></div>
+<p>fi</p>
+<p># Ensure destination dir exists
+  [ -d "$dest" ] || mkdir -p "$dest"
+  if [ ! -w "$dest" ] ; then
+    log ERROR "Impossible to install or write in path: $dest"
+    return 1
+  fi</p>
+<p># Ensure a file has been updated
+  local _shxt_ctx_target_download_path="$dest/shxt.sh"
+  log INFO "Downloading $_shxt_ctx_target_download_path from $url ..."
+  if download_file "$url" "$_shxt_ctx_target_download_path"; then
+    chmod +x "$_shxt_ctx_target_download_path"</p>
+<div class="language-text highlight"><pre><span></span><code>log INFO &quot;shxt.sh installed in $dest&quot;
+</code></pre></div>
+<p>else
+    log ERROR "Failed to install shxt.sh"
+    return 1
+  fi
+}</p>
+<p>_loader2__init ()
+{
+  echo "Init or reconfigure shxt $@"
+}</p>
+<p>_loader2__clean ()
+{
+  echo "Clean shxt $@"
+}</p>
+<h1 id="_10">=============================================================</h1>
+<h1 id="new-api-v2-helpers">NEW API V2 helpers</h1>
+<h1 id="_11">=============================================================</h1>
+<p><em>loader2__ctx_clean () {
+  unset ${!_shxt_ctx</em>*}
+}</p>
+<p>_loader2__ctx_init () {</p>
+<p>export _shxt_ctx_kind=$1
+  export _shxt_ctx_target=$2
+  export _shxt_ctx_target_installed=false
+  export _shxt_ctx_target_downloaded=false</p>
+<p>export _shxt_ctx_store_name=
+  export _shxt_ctx_store_paths=</p>
+<p>export _shxt_ctx_target_download_dir=
+  export _shxt_ctx_target_download_path=
+  export _shxt_ctx_target_dir=
+  export _shxt_ctx_target_path=</p>
+<p># source_url=${3:-}</p>
+<p>case "$_shxt_ctx_kind" in
+    bin)
+      _shxt_ctx_store_name=SHXT_BIN_PATHS
+      _shxt_ctx_target_download_dir=${SHXT_RW_PATH:+$SHXT_RW_PATH/bin}
+      # path_suffix="$SHXT_DIR_BIN"
+      ;;
+    lib)
+      _shxt_ctx_store_name=SHXT_LIB_PATHS
+      _shxt_ctx_target_download_dir=${SHXT_RW_PATH:+$SHXT_RW_PATH/lib}
+      # path_suffix="$SHXT_DIR_LIB"
+      ;;
+    file)
+      _shxt_ctx_store_name=SHXT_FILE_PATHS
+      _shxt_ctx_target_download_dir=${SHXT_RW_PATH:+$SHXT_RW_PATH/files}
+      # path_suffix="$SHXT_DIR_FILES" 
+      ;;<br />
+    *) 
+      &gt;&amp;2 printf "_loader2__ctx_init does not support kind '%s', please use one of: %s\n" "$_shxt_ctx_kind" "bin, lib or file"
+      return 8
+    ;;
+  esac</p>
+<p># Ensure path is always up to date
+  export PATH=$SHXT_BIN_PATHS</p>
+<p># Set custom paths
+  _shxt_ctx_store_paths=${!_shxt_ctx_store_name}
+  _shxt_ctx_target_download_path=${_shxt_ctx_target_download_dir:+$_shxt_ctx_target_download_dir/$_shxt_ctx_target}</p>
+<p># Lookup if not downloaded
+  if [ -f "$_shxt_ctx_target_download_path" ]; then
+    _shxt_ctx_target_path="$_shxt_ctx_target_download_path"
+    _shxt_ctx_target_downloaded=true
+  else
+    _shxt_ctx_target_path=$(varpath_find2 "$_shxt_ctx_store_name" "$_shxt_ctx_target" || true)
+  fi</p>
+<p># Report if installed
+  _shxt_ctx_target_dir=${_shxt_ctx_target_path%/*}
+  if [ -f "$_shxt_ctx_target_path" ]; then
+    _shxt_ctx_target_installed=true
+  fi</p>
+<p>}</p>
+<h1 id="_12">======================</h1>
+<h1 id="new-api-v2-loader">NEW API V2 LOADER</h1>
+<h1 id="_13">======================</h1>
+<p>_loader2__download ()
+{
+  _loader2__ctx_init "$@"
+  shift 2
+  local url=${1:-}</p>
+<p># Ensure URL is available
+  if [ -z "$url" ]; then
+    log CRIT "Missing URL for $_shxt_ctx_target !"
+    return 1
+  fi</p>
+<p>if [ "$_shxt_ctx_target_downloaded" != true ]; then
+    # log INFO "Downloading $_shxt_ctx_target ..."
+    _loader2__update "$_shxt_ctx_kind" "$_shxt_ctx_target" "$url"
+  # else
+  #   log INFO "Using downloaded $_shxt_ctx_target ..."
+  fi</p>
+<p>}</p>
+<p>_loader2__update ()
+{
+  _loader2__ctx_init "$@"
+  shift 2
+  local url=${1:-}</p>
+<p># Ensure URL is available
+  if [ -z "$url" ]; then
+    log CRIT "Missing URL for $_shxt_ctx_target !"
+    return 1
+  fi</p>
+<p># Ensure a file has been updated
+  log INFO "Downloading $_shxt_ctx_target from $url ..."
+  download_file "$url" "$_shxt_ctx_target_download_path"
+  if [ "$_shxt_ctx_kind" == bin ]; then
+    chmod +x "$_shxt_ctx_target_download_path"
+  fi
+}</p>
+<p>_loader2__use ()
+{
+  _loader2__ctx_init "$@"
+  shift 2
+  local url=${1:-}</p>
+<p>if [ "$_shxt_ctx_target_installed" != true ]; then
+    _loader2__update "$_shxt_ctx_kind" "$_shxt_ctx_target" "$url"
+  fi</p>
+<p># Enable the thing ...
+  case "$_shxt_ctx_kind" in
+    lib)
+      local old_cd=$PWD
+      log INFO "Sourcing lib $_shxt_ctx_target_path"
+      cd "${_shxt_ctx_target_dir}"
+      . "${_shxt_ctx_target_path}"
+      cd "${old_cd}"
+      ;;
+    file) ;;<br />
+  esac</p>
+<p>}</p>
+<p>_loader2__path ()
+{
+  _loader2__ctx_init "$@"
+  printf '\s' "$_shxt_ctx_target_path"
+}</p>
+<p>_loader2__cat ()
+{
+  _loader2__ctx_init "$@"
+  if [ -f "$_shxt_ctx_target_path" ]; then
+    cat "$_shxt_ctx_target_path"
+  fi
+  return 1
+}</p>
+<p>_loader2__help_cli ()
+{
+  cat &lt;&lt;EOF
+Mode: Executed
+Usage: $0 --help
+  $0 version
+  $0 help
+  $0 install [PATH]         Install/update automatically in PATH</p>
+<p>Infos:
+  SHXT_INSTALL_PATH=$SHXT_INSTALL_PATH
+EOF</p>
+<p>}</p>
+<p>_loader2__help_api ()
+{
+  cat &lt;&lt;EOF
+Mode: Sourced
+Usage: . $0
+  $0 version
+  $0 help
+  $0 install [PATH]         Install/update automatically in PATH</p>
+<p>$0 use [bin|lib|file] [NAME] [PATH]         Use an item, locally or remotely
+  $0 download [bin|lib|file] [NAME] [PATH]    Download an item
+  $0 update [bin|lib|file] [NAME] [PATH]      Always update an item</p>
+<p>Infos:
+  SHXT_INSTALL_PATH=$SHXT_INSTALL_PATH</p>
+<p>EOF</p>
+<p>}</p>
+<p>loader_cli ()
+{
+  local action=$1
+  case "$action" in
+    help|--help|-h)
+      _loader2__help_cli
+      return $?
+    ;;
+  esac</p>
+<p>loader "$@"</p>
+<p>}</p>
+<h1 id="main-api">Main API</h1>
+<p>loader ()
+{
+  local action=$1
+  shift 1</p>
+<p>case "$action" in
+    version)
+      printf '%s\n' "1.0.0"
+      return $?
+    ;;
+    install)
+      _loader2__install "$@"
+      return $?
+    ;;
+    init|conf)
+      _loader2__init "$@"
+      return $?
+    ;;
+    app|start|clean)
+      _loader2__clean "$@"
+      return $?
+    ;;
+  esac</p>
+<p>case "$action" in
+    # Behavioral settings
+    download|install)
+      _loader2__download "$@"
+    ;;
+    update)
+      _loader2__update "$@"
+    ;;
+    use|source|enable)
+      _loader2__use "$@"
+    ;;</p>
+<div class="language-text highlight"><pre><span></span><code># Informative API
+path)
+  _loader2__path &quot;$@&quot;
+;;
+cat)
+  _loader2__cat &quot;$@&quot;
+;;
+
+*) 
+  &gt;&amp;2 printf &quot;loader_use does not support action &#39;%s&#39;, please use one of: %s\n&quot; &quot;$action&quot; &quot;bin, lib or file&quot;
+  return 8
+;;
+</code></pre></div>
+<p>esac</p>
+<p>_loader2__ctx_clean</p>
+<p>}</p>
+<p>loader2 () 
+{
+  loader "$@"
+}</p>
+<h1 id="_14">=============================================================</h1>
+<h1 id="internal-libraries">Internal libraries</h1>
+<h1 id="_15">=============================================================</h1>
+<h1 id="_16"># =============================================================</h1>
+<h1 id="script-loader"># Script loader</h1>
+<h1 id="_17"># =============================================================</h1>
+<h1 id="if-bash_source0-0-then_2"># if [[ "${BASH_SOURCE[0]}" =~ .*"$0"$ ]]; then</h1>
+<h1 id="if-bash_source0-0-then_3">if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then</h1>
+<h1 id="2-printf-0-is-not-meant-to-be-called-but-sourced-in-shell-scripts-see-help-usage-belownn">&gt;&amp;2 printf "$0 is not meant to be called, but sourced in shell scripts. See help usage below:\n\n"</h1>
+<h1 id="import__help">import__help</h1>
+<h1 id="exit-1">exit 1</h1>
+<h1 id="else_1">else</h1>
+<h1 id="shxt_init">shxt_init "$@"</h1>
+<h1 id="fi_1">fi</h1>
+<h1 id="use-cases">Use cases:</h1>
+<h1 id="eval-cat-shxtsh">eval "$(cat ../shxt.sh)"</h1>
+<h1 id="if-bash_source0-0-then_4">if [[ "${BASH_SOURCE[0]}" =~ .*"$0"$ ]]; then</h1>
+<p>if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then</p>
+<p># shxt_init
+  shxt_init
+  loader_cli "$@"</p>
+<p>else
+  shxt_init "$@"</p>
+<p>fi</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../install/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Install">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Install
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "navigation.tabs", "content.code.annotate"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
