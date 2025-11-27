@@ -1,24 +1,58 @@
-# Welcome to MkDocs
+# SHell eXTender
 
 Easily reuse code chunks across shell scripts.
 
+## Install
 
-Release is available here [https://mrjk.github.io/shxt/shxt.sh](shxt.sh).
+If you arrived by chance on this page, this is because an app requires shxt.sh to be installed. To fix this problem, simply run:
+
+```bash
+# Install as system level
+curl -v https://mrjk.github.io/shxt/shxt.sh | sudo bash -s install
+
+# Install for current user
+curl -v https://mrjk.github.io/shxt/shxt.sh | bash -s install
 ```
-eval "$(curl -v https://mrjk.github.io/shxt/shxt.sh); shxt_init"
+
+Then run again you're app, it should work.
+
+However, if you're here to use shxt.sh in your script or as shell manager, you're at the good place, please read on!
+
+
+## Using shxt in your scripts
+
+shxt.sh virtually let you use and reuse common piece of code, usually available on internet. Shxt.sh takes advantage of this to provide a very minimalist but yet powerful tool to act as a simple dependency resolver for bash.
+
+Thus a very basic and common way to use shxt.sh is to always start your scripts like this:
+
+```bash
+#!/bin/bash
+
+# Auto install shxt
+. shxt.sh || eval "$(curl -v https://mrjk.github.io/shxt/shxt.sh)"
 ```
 
-Or in dev mode
+## Using shxt with your daily shell
+
+You may want to live try shxt in your shell, thus try this:
+```bash
+. shxt.sh || eval "SHXT_NOINSTALL=true; $(curl -v https://mrjk.github.io/shxt/shxt.sh)"
 ```
-eval "$(curl -v http://127.0.0.1:8000/shxt/shxt.sh)"
 
-shxt_init
+## Using shxt with in your bashrc
+
+Store your public configs online, and access them if not available.
+```bash
+# .bashrc
+# File bashrc managed by shxt.sh
+
+# Run or auto-install shxt.sh
+. shxt.sh || eval "$(curl -v https://mrjk.github.io/shxt/shxt.sh); shxt_init"
+
+# My shell config as lib
+loader use lib bash_config https://raw.githubusercontent.com/USER/dotfiles/ref/head/master/.config/bash_config.sh
 ```
 
 
-## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+
