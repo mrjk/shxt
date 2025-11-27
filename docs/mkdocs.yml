@@ -110,6 +110,7 @@ nav:
   - Scripts:
     - scripts/install.md
     - scripts/usage.md
+    - scripts/use_cases.md
   - Shell:
     - shell/install.md
     - shell/usage.md
