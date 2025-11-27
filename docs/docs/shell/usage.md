@@ -59,10 +59,27 @@ You can even compact the whole in one single file, executing other imports:
 . shxt.sh || eval "$(curl -v https://mrjk.github.io/shxt/shxt.sh); shxt_init"
 
 # My shell config as lib
-loader use lib my_super_bash_cfg https://raw.githubusercontent.com/USER/dotfiles/ref/head/master/.my_super_bash_cfg.sh
+loader use lib my_super_bash_cfg https://raw.githubusercontent.com/USER/dotfiles/ref/head/master/my_super_bash_cfg.sh
+```
 
-# Then load a single function
-config_shell
+### Make variants
+
+You can use easily deploy file supporting variants:
+```bash
+# .bashrc
+# Minimal bashrc managed by shxt.sh
+
+# Run or auto-install shxt.sh
+. shxt.sh || eval "$(curl -v https://mrjk.github.io/shxt/shxt.sh); shxt_init"
+
+# Uncomment to enable base mode
+#loader use lib bash_cfg_base https://raw.githubusercontent.com/USER/dotfiles/ref/head/master/bash_cfg_base.sh
+
+# Uncomment to enable root user mode
+#loader use lib bash_cfg_root https://raw.githubusercontent.com/USER/dotfiles/ref/head/master/bash_cfg_root.sh
+
+# Uncomment to enable developper mode
+#loader use lib bash_cfg_dev https://raw.githubusercontent.com/USER/dotfiles/ref/head/master/bash_cfg_dev.sh
 ```
 
 ### Configuring rc.files

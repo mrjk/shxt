@@ -107,16 +107,18 @@ nav:
   - Home:
     - index.md
     - install.md
-  - Usage:
-    - Scripts:
-      - scripts/install.md
-      - scripts/usage.md
-    - Shell:
-      - shell/install.md
-      - shell/usage.md
-  - Advanced:
+  - Scripts:
+    - scripts/install.md
+    - scripts/usage.md
+  - Shell:
+    - shell/install.md
+    - shell/usage.md
+  - References:
+    - implementation.md
     - advanced.md
+    - development.md
     - source.md
+    - license.md
 
 
 

@@ -1,4 +1,4 @@
-# Installation in scripts
+# Install
 
 Production release for [https://mrjk.github.io/shxt/shxt.sh](shxt.sh) is available here on this website.
 

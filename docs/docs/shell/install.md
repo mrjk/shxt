@@ -1,4 +1,4 @@
-# Installation as shell manager
+# Install
 
 While shxt.sh can easily handle script dependencies, it can work with
 you shell instance. 
