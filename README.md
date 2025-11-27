@@ -1,3 +1,4 @@
-# shxt
+# SHell eXtender
 
-Shell loader for all
+Check documentation on https://mrjk.github.io/shxt/
+
