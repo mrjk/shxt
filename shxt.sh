@@ -87,7 +87,7 @@ varpath_append() {
   if [ -d "$path" ]; then
     varpath_append_force "$var" "$path"
   else
-    log TRACE "Skip directory for $var: $path"
+    log TRACE "Skip absent directory for $var: $path"
   fi
 
 }
@@ -117,7 +117,7 @@ varpath_prepend() {
   if [ -d "$path" ]; then
     varpath_prepend_force "$var" "$path"
   else
-    log TRACE "Skip directory for $var: $path"
+    log TRACE "Skip absent directory for $var: $path"
   fi
 
 }
@@ -441,10 +441,13 @@ loader_register()
 shxt_init()
 {
 
-  local auto_install=true
-  local auto_update=true
-  local debug=false
-  local trace=false
+  local owned=${SHXT_OWNED:-true}
+  local auto_install=${SHXT_INSTALL:-$owned}
+  local auto_update=${SHXT_UPDATE:-$owned}
+
+  local debug=${SHXT_DEBUG:-false}
+  local trace=${SHXT_TRACE:-false}
+
   local OPTIND=0
   while getopts 'dxuUlL' opt; do
     case ${opt} in
@@ -478,11 +481,11 @@ shxt_init()
 
 
   # Enable flags
-  if [[ "$debug" == true ]]; then
+  if [[ -n "$debug" ]] && [[ "$debug" != false ]]; then
     SHXT_LOG_LEVEL=TRACE
     log INFO "shxt.sh debug mode enabled"
   fi
-  if [[ "$trace" == true ]]; then
+  if [[ -n "$trace" ]] && [[ "$trace" != false ]]; then
     set -x
   fi
 
@@ -491,6 +494,8 @@ shxt_init()
   
   local path=$(realpath "$0")
   local root="${path%/*}${d:+/$d}"
+  local root_parent=${path%/*}
+  root_parent=${root_parent%/*}
 
 
   # Autodetect current installation
@@ -516,7 +521,7 @@ shxt_init()
         need_update=true
       fi
     else
-      log TRACE "No need to update, newer than $max_days days"
+      log TRACE "No need to update shxt.sh, newer than $max_days days"
     fi
   fi
 
@@ -567,9 +572,17 @@ shxt_init()
   # # Prepare lookup paths
 
   export SHXT_LIB_PATHS=
-  # varpath_append SHXT_LIB_PATHS "$root/lib"
-  # varpath_append SHXT_LIB_PATHS "$root/libexec"
-  # varpath_append SHXT_LIB_PATHS "$root"
+  # Add lib dirs at the same level
+  varpath_append SHXT_LIB_PATHS "$root/lib"
+  varpath_append SHXT_LIB_PATHS "$root/libexec"
+  varpath_append SHXT_LIB_PATHS "$root"
+
+  # Add lib dirs at the parent level
+  varpath_append SHXT_LIB_PATHS "$root_parent/lib"
+  varpath_append SHXT_LIB_PATHS "$root_parent/libexec"
+  varpath_append SHXT_LIB_PATHS "$root_parent"
+
+
   # varpath_append SHXT_LIB_PATHS "$SHXT_DIR_SHARED/lib"
   # varpath_append SHXT_LIB_PATHS "$SHXT_DIR_DOWNLOADS/$SHXT_NEEDLE/lib"
 
@@ -989,10 +1002,15 @@ if [[ "shxt.sh" == .*"$0"$ ]]; then
 
 elif [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
   # Loaded as library for any programs
-  shxt_init
+  shxt_init "$@"
 
 else
-  shxt_init "$@"
+  # Loaded as library for any programs
+
+  # Executed like
+  #  - bash ./myscript.sh
+  #  - ./myscript.sh
+  shxt_init
 
 fi
 
