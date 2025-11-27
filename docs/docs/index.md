@@ -47,7 +47,7 @@ Store your public configs online, and access them if not available.
 # File bashrc managed by shxt.sh
 
 # Run or auto-install shxt.sh
-. shxt.sh || eval "$(curl -v https://mrjk.github.io/shxt/shxt.sh); shxt_init"
+. shxt.sh || eval "$(curl -v https://mrjk.github.io/shxt/shxt.sh)"
 
 # My shell config as lib
 loader use lib bash_config https://raw.githubusercontent.com/USER/dotfiles/ref/head/master/.config/bash_config.sh

@@ -48,6 +48,18 @@ loader use bin mise https://github.com/jdx/mise/releases/download/v2024.1.0/mise
 loader download bin direnv https://github.com/direnv/direnv/releases/download/v2.37.1/direnv.linux-amd64
 ```
 
+## Enable debug logging
+
+Use the `SHXT_DEBUG` environment variable to set debug mode:
+```bash
+SHXT_DEBUG=true myapp.sh 
+```
+
+Use the `SHXT_TRACE` environment variable to enable trace mode:
+```bash
+SHXT_TRACE=true myapp.sh
+```
+
 
 ## Bash strict mode
 
@@ -60,7 +72,7 @@ It should be compatible :) Use like this:
 set -eu -o pipefail
 
 # Run or auto-install shxt.sh
-. shxt.sh || eval "$(curl -v https://mrjk.github.io/shxt/shxt.sh); shxt_init"
+. shxt.sh || eval "$(curl -v https://mrjk.github.io/shxt/shxt.sh)"
 ```
 
 ## Specific read/write directory
@@ -87,5 +99,5 @@ In script
 ```bash
 #!/bin/bash
 
-eval "$(curl -v http://127.0.0.1:8000/shxt/shxt.sh)"; shxt_init
+eval "$(curl -v http://127.0.0.1:8000/shxt/shxt.sh)"
 ```

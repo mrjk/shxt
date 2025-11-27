@@ -15,7 +15,7 @@ Here is a somewhat configuration:
 # File bashrc managed by shxt.sh
 
 # Run or auto-install shxt.sh
-. shxt.sh || eval "$(curl -v https://mrjk.github.io/shxt/shxt.sh); shxt_init"
+. shxt.sh || eval "$(curl -v https://mrjk.github.io/shxt/shxt.sh)"
 
 # My shell config as lib
 loader use lib bash_config https://raw.githubusercontent.com/USER/dotfiles/ref/head/master/.config/bash_config.sh
@@ -56,7 +56,7 @@ You can even compact the whole in one single file, executing other imports:
 # Minimal bashrc managed by shxt.sh
 
 # Run or auto-install shxt.sh
-. shxt.sh || eval "$(curl -v https://mrjk.github.io/shxt/shxt.sh); shxt_init"
+. shxt.sh || eval "$(curl -v https://mrjk.github.io/shxt/shxt.sh)"
 
 # My shell config as lib
 loader use lib my_super_bash_cfg https://raw.githubusercontent.com/USER/dotfiles/ref/head/master/my_super_bash_cfg.sh
@@ -70,7 +70,7 @@ You can use easily deploy file supporting variants:
 # Minimal bashrc managed by shxt.sh
 
 # Run or auto-install shxt.sh
-. shxt.sh || eval "$(curl -v https://mrjk.github.io/shxt/shxt.sh); shxt_init"
+. shxt.sh || eval "$(curl -v https://mrjk.github.io/shxt/shxt.sh)"
 
 # Uncomment to enable base mode
 #loader use lib bash_cfg_base https://raw.githubusercontent.com/USER/dotfiles/ref/head/master/bash_cfg_base.sh
