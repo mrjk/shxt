@@ -1,6 +1,6 @@
 # Install
 
-Production release for [https://mrjk.github.io/shxt/shxt.sh](shxt.sh) is available here on this website.
+Production release for [shxt.sh](https://mrjk.github.io/shxt/shxt.sh) is available here on this website.
 
 So to make it live-run and auto-install (require internet the first time):
 ```bash
