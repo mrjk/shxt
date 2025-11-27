@@ -884,7 +884,7 @@ EOF
 
 loader_cli ()
 {
-  local action=$1
+  local action=${1:-help}
   case "$action" in
     help|--help|-h)
       _loader2__help_cli
@@ -953,11 +953,6 @@ loader ()
 
 }
 
-loader2 () 
-{
-  loader "$@"
-}
-
 
 # =============================================================
 # Internal libraries
@@ -983,13 +978,18 @@ loader2 ()
 # Use cases:
 #  eval "$(cat ../shxt.sh)"
 
+# log WARN "'${BASH_SOURCE[0]}' == $0"
 
 # if [[ "${BASH_SOURCE[0]}" =~ .*"$0"$ ]]; then
-if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
-
-  # shxt_init
+# if [[ "${BASH_SOURCE[0]}" == "shxt.sh" ]]; then
+if [[ "shxt.sh" == .*"$0"$ ]]; then
+  # started as CLI
   shxt_init
   loader_cli "$@"
+
+elif [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
+  # Loaded as library for any programs
+  shxt_init
 
 else
   shxt_init "$@"

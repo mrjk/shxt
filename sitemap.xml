@@ -2,14 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://mrjk.github.io/shxt/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-11-27</lastmod>
+    </url>
+    <url>
+         <loc>https://mrjk.github.io/shxt/advanced/</loc>
+         <lastmod>2025-11-27</lastmod>
     </url>
     <url>
          <loc>https://mrjk.github.io/shxt/install/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-11-27</lastmod>
     </url>
     <url>
          <loc>https://mrjk.github.io/shxt/source/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-11-27</lastmod>
+    </url>
+    <url>
+         <loc>https://mrjk.github.io/shxt/scripts/install/</loc>
+         <lastmod>2025-11-27</lastmod>
+    </url>
+    <url>
+         <loc>https://mrjk.github.io/shxt/scripts/usage/</loc>
+         <lastmod>2025-11-27</lastmod>
+    </url>
+    <url>
+         <loc>https://mrjk.github.io/shxt/shell/install/</loc>
+         <lastmod>2025-11-27</lastmod>
+    </url>
+    <url>
+         <loc>https://mrjk.github.io/shxt/shell/usage/</loc>
+         <lastmod>2025-11-27</lastmod>
     </url>
 </urlset>
